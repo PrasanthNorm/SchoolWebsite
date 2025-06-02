@@ -95,12 +95,14 @@
 .gallery-item {
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .gallery-item:hover {
     transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-item img {
@@ -108,6 +110,27 @@
     height: 200px;
     object-fit: cover;
     display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .caption {
+    transform: translateY(0);
 }
 
 /* Contact Form (for contact page) */
@@ -168,6 +191,109 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Image styles for content sections */
+.school-image, .history-image, .founders-image, .vision-image, .mission-image {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.school-image img, .history-image img, .founders-image img, .vision-image img, .mission-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-caption {
+    background-color: #f8f8f8;
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Principal profile */
+.principal-profile {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.principal-image {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.principal-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.principal-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.principal-message {
+    margin-top: 20px;
+}
+
+/* Facility styles */
+.facility-image {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.facility-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.facility-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.facility-card .facility-image {
+    flex: 1;
+    min-width: 250px;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.facility-card .facility-image img {
+    height: 100%;
+    min-height: 250px;
+}
+
+.facility-card .facility-info {
+    flex: 2;
+    min-width: 300px;
+    padding: 20px;
+}
+
 /* Faculty/Staff Cards (for faculty page) */
 .faculty-container {
     display: grid;
@@ -189,7 +315,7 @@
 }
 
 .faculty-image {
-    height: 200px;
+    height: 250px;
     overflow: hidden;
 }
 
@@ -197,6 +323,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.faculty-card:hover .faculty-image img {
+    transform: scale(1.05);
 }
 
 .faculty-info {
@@ -206,6 +337,12 @@
 .faculty-info h3 {
     color: #4285f4;
     margin-bottom: 5px;
+}
+
+.faculty-info .faculty-title {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
 }
 
 .faculty-info .designation {
